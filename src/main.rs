@@ -179,7 +179,6 @@ impl Sudoku {
 #[macroquad::main(window_conf)]
 async fn main() {
     let mut sudoku = Sudoku::new();
-    let mut last_clicked: bool = false;
     let mut hovered = false;
 
     loop {
@@ -233,8 +232,6 @@ async fn main() {
         egui_macroquad::draw();
 
         next_frame().await;
-
-        last_clicked = is_mouse_button_down(MouseButton::Left);
     }
 }
 
