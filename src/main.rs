@@ -67,6 +67,10 @@ impl Sudoku {
     }
 
     fn solve_next(&mut self) {
+        if !self.check_if_solvable() {
+            return;
+        }
+
         let mut counts: Vec<Vec<i8>> = vec![vec![0; 9]; 9];
         
         for x in 0..9 {
