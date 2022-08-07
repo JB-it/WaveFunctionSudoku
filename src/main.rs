@@ -63,7 +63,7 @@ impl Sudoku {
                     Field::Collapsed { num: _ } => {}
                     Field::Superposition { states } => {
                         if states.iter().filter(|&&x| x).count() as i8 == 0 {
-                            false
+                            return false;
                         }
                     }
                 }
