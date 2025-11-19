@@ -210,7 +210,7 @@ async fn main() {
                 .response;
             hovered = response
                 .rect
-                .contains(match egui_ctx.input().pointer.hover_pos() {
+                .contains(match egui_ctx.pointer_hover_pos() {
                     Some(pos) => pos,
                     None => Pos2::new(0.0, 0.0),
                 });
